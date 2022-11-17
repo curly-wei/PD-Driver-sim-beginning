@@ -1,21 +1,21 @@
 .title Equivalent photodiode model
 
-	.subckt pd_model IpdCathod IpdAnode kCpd=400pF kRpd=38G
+	.subckt pd_model IpdN IpdP kCpd=400pF kRpd=38G
 		******
 		** kIpd: Equivalent current source of photodiode /Constant
 		** kCpd: Equivalent capacitor of photodiode /Constant
 		** kRs: Equivalent Resistor of photodiode /Constant
-		** IpdCathod: Photodiode current output, Cathod
-		** IpdAnode: Photodiode current output, Anode
+		** IpdP: Photodiode current output, N-type (Cathod)
+		** IpdN: Photodiode current output, P-type (Anode)
 		******	
 		
-		C_pd IpdCathod IpdAnode {kCpd}
-		R_pd IpdCathod IpdAnode {kRpd}
+		C_pd IpdP IpdN {kCpd}
+		R_pd IpdP IpdN {kRpd}
 		
 		******
 		** Pulse for emulate PD current output
 		** pulse( V_init V_pulse T_delay T_risetime T_falltime PulseWidth Period )
-		I_pd IpdCathod IpdAnode pulse( 0 1uA 100ns 6us 6us 10us 3000us )
+		I_pd IpdN IpdP pulse( 0 1uA 0ns 6us 6us 10us 3000us )
 		******
 	
 	.ends
