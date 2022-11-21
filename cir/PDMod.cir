@@ -1,6 +1,6 @@
 .title Equivalent photodiode model
 
-	.subckt pd_model IpdN IpdP kCpd=400pF kRpd=38G
+	.subckt PDMod IpdN IpdP kCpd=400pF kRpd=38G
 		******
 		** kIpd: Equivalent current source of photodiode /Constant
 		** kCpd: Equivalent capacitor of photodiode /Constant
