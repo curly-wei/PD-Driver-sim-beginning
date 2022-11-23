@@ -20,7 +20,7 @@ then magic error message will show up when you compilation.
 
 ## 1. Run
 
-* Run simulation and plot
+* Run simulation and plot (default)
 
 ```bash
 $make
