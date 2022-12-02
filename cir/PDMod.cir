@@ -15,7 +15,7 @@
 		******
 		** Pulse for emulate PD current output
 		** pulse( V_init V_pulse T_delay T_risetime T_falltime PulseWidth Period )
-		I_pd IpdN IpdP pulse( 0 1uA 0ns 6us 6us 10us 3000us )
+		I_pd IpdN IpdP pulse( 0 1uA 0ns 20ns 20ns 40ns 3000us )
 		******
 	
 	.ends

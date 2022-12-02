@@ -1,0 +1,183 @@
+
+**** 02/25/21 11:56:25 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ac_sweep"  [ C:\Users\a0232073\Desktop\GWL_Models\OPA810\AppendScript\opa810_pspice\opa810_pspice-pspicefile
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "ac_sweep.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+.LIB "../../../opa810_a.lib" 
+* From [PSPICE NETLIST] section of C:\SPB_Data\cdssetup\OrCAD_PSpiceTIPSpice_Install\17.4.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 1000ns 0 1n 
+.OPTIONS ADVCONV
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source OPA810_PSPICE
+R_R2         0 N01830  100 TC=0,0 
+V_V2         VEE 0 -12Vdc
+R_R1         N01830 OUT  900 TC=0,0 
+V_V1         VCC 0 12Vdc
+X_U1         IN+ N01830 OUT VCC VEE OPA810
+V_V3         IN+ 0  AC 1
++SIN 0 1 1e6 0 0 0
+
+**** RESUMING ac_sweep.cir ****
+.END
+
+**** 02/25/21 11:56:25 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ac_sweep"  [ C:\Users\a0232073\Desktop\GWL_Models\OPA810\AppendScript\opa810_pspice\opa810_pspice-pspicefile
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.X_E_N.DVN  
+          IS  100.000000E-18 
+          KF    3.162278E-12 
+
+
+**** 02/25/21 11:56:25 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ac_sweep"  [ C:\Users\a0232073\Desktop\GWL_Models\OPA810\AppendScript\opa810_pspice\opa810_pspice-pspicefile
+
+
+ ****     Resistor MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.R_NOISE    X_U1.R_NOISELESS 
+  T_Measured   27              27            
+   T_Current    0            -273.15         
+           R    1               1            
+
+
+**** 02/25/21 11:56:25 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ac_sweep"  [ C:\Users\a0232073\Desktop\GWL_Models\OPA810\AppendScript\opa810_pspice\opa810_pspice-pspicefile
+
+
+ ****     Voltage Controlled Switch MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.X_ESD_OUT.ESD_SW           X_U1.X_S1._S1   X_U1.X_S2._S2   
+         RON   50                                .5              .5          
+        ROFF    1.000000E+12                  200.000000E+03  200.000000E+03 
+         VON     .5                              .4              .4          
+        VOFF     .45                           -1              -1            
+
+
+               X_U1.X_SW_OL.OL_SW 
+         RON    1.000000E-03 
+        ROFF    1.000000E+09 
+         VON     .9          
+        VOFF     .8          
+
+
+               X_U1.X_SW_OR.OR_SW 
+         RON     .01         
+        ROFF    1.000000E+09 
+         VON     .01         
+        VOFF    0            
+
+
+ERROR(ORPSIM-16583): Detected an imported model containing transistors or diodes. For such models, PSpice for TI supports a minimum of one and maximum of three traces. Reduce the number of traces and simulate again.
+
+
+ABORTING SIMULATION
+**** 02/25/21 11:56:25 ******* PSpice 17.4.0 (Nov 2018) ******* ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-ac_sweep"  [ C:\Users\a0232073\Desktop\GWL_Models\OPA810\AppendScript\opa810_pspice\opa810_pspice-pspicefile
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+Node counts:
+  Top level (NUNODS)                =           6
+  External (NCNODS)                 =          91
+  Total (NUMNOD)                    =          91
+
+Total device count (NUMEL)          =         190
+  Capacitors (C)                    =          29
+  Diodes (D)                        =           2
+  VCVS (E)                          =           8
+  VCCS (G)                          =          34
+  CCVS (H)                          =           3
+  Current Sources (I)               =           5
+  Resistors (R)                     =          89
+  VSwitches (S)                     =           7
+  Voltage Sources (V)               =          13
+
+Number of subcircuits (X)           =          22
+
+Matrix statistics:
+  Matrix size (NSTOP)               =         115
+  Initial no. elements (NTTAR)      =         458
+  No. elements w/ fillin (NTTBR)    =         458
+  No. fillins (IFILL)               =           0
+  No. overflows (NTTOV)             =           0
+  No. LU operations (IOPS)          =           0
+  Percent sparsity (PERSPA)         =      96.537
+
+Analysis statistics:
+  No. total time points (NUMTTP)    =           0
+  No. rejected time points (NUMRTP) =           0
+  No. iterations (NUMNIT)           =           0
+
+Load Threads                        =           1
+
+Runtime statistics:                       Seconds      Iterations
+  Matrix load                       =        0.00
+  Matrix solution                   =        0.00               1
+  Readin                            =        2.16
+  General setup                     =        0.00
+  CMI setup                     =        0.00
+  Setup                             =        0.00
+  DC sweep                          =        0.00               0
+  Bias point                        =        0.00               0
+  AC and noise                      =        0.00               0
+  Total transient analysis          =        0.00
+  Output                            =        0.00
+  Overhead                          =         .33
+  License check-out time            =       13.42
+  Total job time (using Solver 1)   =        2.16
+

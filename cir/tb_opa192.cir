@@ -1,17 +1,18 @@
 .title Testbench for PD-Driver
-  .include IVCvT.cir
+  .include IVCvT_OPA192.cir
   .include PDMod.cir
 
-  VCC 5v0 GND DC 5V
 
-  X_IVCvT nPD_Io nIVCvt_Vo 5v0 GND IVCvT
+  VCC 5v0 GND DC 5V
+  
+  X_IVCvT nPD_Io nIVCvt_Vo 5v0 GND IVCvT_OPA192 kCfb=20pF kRfb=1k
   X_PDMod nPD_Io GND PDMod
   
   .control
     * set ctrl var
-    set tran_data_out_filename="pd-tran.ssv"
+    set tran_data_out_filename="pd-tran-opa192.ssv"
     * Transient Analyze
-    tran 0.1u 200u ;tran <step> <stop>
+    tran 5n 50u ;tran <step> <stop>
     * Save data to ssv file
     wrdata $tran_data_out_filename V(nIVCvt_Vo) 
     ssd

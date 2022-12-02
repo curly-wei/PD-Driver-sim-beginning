@@ -22,20 +22,16 @@ then magic error message will show up when you compilation.
 
 * Run simulation and plot (default)
 
+* Sim opa192 and plot it
+  
 ```bash
-$make
+$make opa192
 ```
 
-* Run simulation only
-
+* Sim opa810 and plot it
+  
 ```bash
-$make sim
-```
-
-* Plot only
-
-```bash
-$make plot
+$make opa810
 ```
 
 * clean simulation generated *.ssv file
@@ -43,7 +39,6 @@ $make plot
 ```bash
 $make clean
 ```
-
 
 ## 2. Resource
 
