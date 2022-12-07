@@ -11,7 +11,7 @@
     * set ctrl var
     set tran_data_out_filename="pd-tran-opa810.ssv"
     * Transient Analyze
-    tran 5n 50u ;tran <step> <stop>
+    tran 5n 5u ;tran <step> <stop>
     * Save data to ssv file
     wrdata $tran_data_out_filename V(nIVCvt_Vo) 
     ssd

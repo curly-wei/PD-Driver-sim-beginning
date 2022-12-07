@@ -1,5 +1,5 @@
 .title I/V Converter for PD-Driver
-  .include OPA810/opa810_a.lib
+  .include lib/OPA810/opa810_a.lib
   .subckt IVCvT_OPA810 Ii Vo Vdd Vss kCfb=2.7pF kRfb=1Meg kRbu=4k kRbd=1k
 		******	
 		** kCpd: Equivelated capacitor of photodiode /Constant 

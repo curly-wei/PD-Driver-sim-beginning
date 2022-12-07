@@ -22,7 +22,7 @@ cir_deps = \
 ## Run Sim
 ###############################
 default:
-	$(error "please set simlulation target, e.g. make opa192")
+	$(error "please set the simlulation target, e.g. make opa192")
 
 opa192: sim_opa192 plot_opa192
 opa810: sim_opa810 plot_opa810
