@@ -1,6 +1,6 @@
 .title Equivalent photodiode model
 
-	.subckt PDMod IpdN IpdP kCpd=400pF kRpd=38G
+	.subckt PDMod IpdN IpdP kCpd=11pF kRpd=38G
 		******
 		** kIpd: Equivalent current source of photodiode /Constant
 		** kCpd: Equivalent capacitor of photodiode /Constant
@@ -15,7 +15,7 @@
 		******
 		** Pulse for emulate PD current output
 		** pulse( V_init V_pulse T_delay T_risetime T_falltime PulseWidth Period )
-		I_pd IpdN IpdP pulse( 0 1uA 0ns 20ns 20ns 40ns 3000us )
+		I_pd IpdN IpdP pulse( 0 10nA 0ns 20ns 20ns 40ns 30us )
 		******
 	
 	.ends

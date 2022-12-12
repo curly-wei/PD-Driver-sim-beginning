@@ -1,6 +1,6 @@
 .title I/V Converter for PD-Driver
-  .include lib/OPA810/opa810_a.lib
-  .subckt IVCvT_OPA810 Ii Vo Vdd Vss kCfb=2.7pF kRfb=1Meg kRbu=47k kRbd=3k
+  .include lib/LMH6601/LMH6601.MOD
+  .subckt IVCvT_LMH6601 Ii Vo Vdd Vss kCfb=2.7pF kRfb=1Meg kRbu=47k kRbd=3k
 		******	
 		** kCpd: Equivelated capacitor of photodiode /Constant 
 		** kCfb: Feedback capacitor /Constant 
@@ -16,7 +16,7 @@
 		R_fb Ii Vo {kRfb}
 		R_bu Vdd nVbias {kRbu}
 		R_bd nVbias Vss {kRbd}
-		X_OPA810 nVbias Ii Vo Vdd Vss OPA810
+		X_LMH6601 nVbias Ii Vdd Vss Vo LMH6601
   .ends
 
 .end

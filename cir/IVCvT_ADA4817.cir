@@ -1,6 +1,6 @@
 .title I/V Converter for PD-Driver
-  .include lib/OPA810/opa810_a.lib
-  .subckt IVCvT_OPA810 Ii Vo Vdd Vss kCfb=2.7pF kRfb=1Meg kRbu=47k kRbd=3k
+  .include lib/ada4817/ada4817.cir
+  .subckt IVCvT_ADA4817 Ii Vo Vdd Vss kCfb=27pF kRfb=1Meg kRbu=47k kRbd=3k
 		******	
 		** kCpd: Equivelated capacitor of photodiode /Constant 
 		** kCfb: Feedback capacitor /Constant 
@@ -11,12 +11,12 @@
 		** Vo: Volatge output 
 		** Vcc: System power high
 		** Vss: System power low 	
-		******
-		C_fb Ii Vo {kCfb}
-		R_fb Ii Vo {kRfb}
+		****** 
+		C_fb Ii Vfb {kCfb}  
+		R_fb Ii Vfb {kRfb}
 		R_bu Vdd nVbias {kRbu}
-		R_bd nVbias Vss {kRbd}
-		X_OPA810 nVbias Ii Vo Vdd Vss OPA810
+		R_bd nVbias Vss {kRbd} 
+		X_ADA4817 nVbias Ii Vdd Vss Vo Vfb Vdd ADA4817
   .ends
 
 .end

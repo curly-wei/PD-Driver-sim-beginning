@@ -1,6 +1,6 @@
 .title I/V Converter for PD-Driver
   .include lib/OPAx192/OPAx192.LIB
-  .subckt IVCvT_OPA192 Ii Vo Vdd Vss kCfb=2.7pF kRfb=1Meg kRbu=4k kRbd=1k
+  .subckt IVCvT_OPA192 Ii Vo Vdd Vss kCfb=2.7pF kRfb=1Meg kRbu=47k kRbd=3k
 		******	
 		** kCpd: Equivelated capacitor of photodiode /Constant 
 		** kCfb: Feedback capacitor /Constant 

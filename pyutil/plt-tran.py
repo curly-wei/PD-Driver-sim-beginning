@@ -44,6 +44,6 @@ plt.plot(\
 )
 plt.xlabel(tran_x_axis_name)
 plt.ylabel(tran_y_axis_name)
-plt.title('Transient Analys of PD-Driver')
+plt.title('Transient Analys of PD-Driver: '+ argv[1] )
 plt.legend()
 plt.show()
