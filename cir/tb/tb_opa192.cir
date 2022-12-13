@@ -1,6 +1,6 @@
 .title Testbench for PD-Driver
-  .include IVCvT_OPA192.cir
-  .include PDMod.cir
+  .include ../IVCvT.cir
+  .include ../PDMod.cir
 
 
   VCC 5v0 GND DC 5V

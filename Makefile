@@ -1,17 +1,15 @@
 pyutil_path = ./pyutil
 
 cir_dir = ./cir
+tb_dir = ${cir_dir}/tb
 cir_files = \
 	PDMod.cir \
-	IVCvT_OPA192.cir \
-	IVCvT_OPA810.cir \
-	IVCvT_LMH6601.cir \
-	IVCvT_ADA4817.cir 
+	IVCvT.cir
 
-tb_file_opa192 = ${cir_dir}/tb_opa192.cir
-tb_file_opa810 = ${cir_dir}/tb_opa810.cir
-tb_file_lmh6601= ${cir_dir}/tb_lmh6601.cir
-tb_file_ada4817 = ${cir_dir}/tb_ada4817.cir
+tb_file_opa192 = ${tb_dir}/tb_opa192.cir
+tb_file_opa810 = ${tb_dir}/tb_opa810.cir
+tb_file_lmh6601= ${tb_dir}/tb_lmh6601.cir
+tb_file_ada4817 = ${tb_dir}/tb_ada4817.cir
 
 sim_target_opa192 = pd-tran-opa192.ssv
 sim_target_opa810 = pd-tran-opa810.ssv
