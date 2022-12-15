@@ -3,9 +3,9 @@
   .include ../PDMod.cir
 
 
-  VCC 5v0 GND DC 5V
+  VCC 4v5 GND DC 4.5V
   
-  X_IVCvT nPD_Io nIVCvt_Vo 5v0 GND IVCvT_LMH6601 kCfb=0.2p kRfb=1Meg
+  X_IVCvT nPD_Io nIVCvt_Vo 4v5 GND IVCvT_LMH6601 kCfb=0.4p kRfb=1Meg
   X_PDMod nPD_Io GND PDMod
   
 
@@ -16,7 +16,6 @@
     tran 5n 5u ;tran <step> <stop>
     * Save data to ssv file 
     wrdata $tran_data_out_filename V(nIVCvt_Vo) 
-    
     exit
   .endc
 

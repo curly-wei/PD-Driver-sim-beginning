@@ -55,13 +55,17 @@ ${sim_target_ada4817}: ${cir_deps} ${tb_file_ada4817}
 # Plot #
 ########
 plot_opa192:
-	python3 ${pyutil_path}/plt-tran.py -t ${sim_target_opa192}
+	python3 ${pyutil_path}/plt-tran.py \
+		-o ${sim_target_opa192}
 plot_opa810:
-	python3 ${pyutil_path}/plt-tran.py -t ${sim_target_opa810}
+	python3 ${pyutil_path}/plt-tran.py \
+		-o ${sim_target_opa810}
 plot_lmh6601: 
-	python3 ${pyutil_path}/plt-tran.py -t ${sim_target_lmh6601}
+	python3 ${pyutil_path}/plt-tran.py \
+		-o ${sim_target_lmh6601} 
 plot_ada4817: 
-	python3 ${pyutil_path}/plt-tran.py -t ${sim_target_ada4817}
+	python3 ${pyutil_path}/plt-tran.py \
+		-o ${sim_target_ada4817}
 
 clean:
 	rm -r *.ssv

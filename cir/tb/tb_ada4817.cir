@@ -14,7 +14,6 @@
     set tran_data_out_filename="pd-tran-ada4817.ssv"
     * Transient Analyze
     tran 1n 10u ;tran <step> <stop>
-    listing
     * plot V(nIVCvt_Vo) 
     * Save data to ssv file
     wrdata $tran_data_out_filename V(nIVCvt_Vo) 
