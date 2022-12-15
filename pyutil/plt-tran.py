@@ -24,9 +24,9 @@ for opt, arg in opts:
 	if opt in ['-t']:
 		tran_data = pd.read_csv(\
 			arg, \
-			sep=' ', \
+			sep='\s+', \
 			header=None, \
-			usecols=[1,3], \
+			usecols=[0,1], \
 			names=[tran_x_axis_name, tran_y_axis_name]\
 		)		
 ## 1. Plot refer to here
