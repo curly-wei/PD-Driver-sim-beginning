@@ -83,6 +83,26 @@
 		R_bd nVbias Vss {kRbd} 
 		X_ADA4817 nVbias Ii Vdd Vss Vo Vfb Vdd ADA4817
   .ends
-
+ 
+	.include lib/OPA355/OPA355.LIB
+  .subckt IVCvT_OPA355 Ii Vo Vdd Vss kCfb=2.7pF kRfb=1Meg kRbu=42k kRbd=3k
+		******	
+		** Implement IV converter with LMH6601
+		** kCpd: Equivelated capacitor of photodiode /Constant 
+		** kCfb: Feedback capacitor /Constant 
+		** kRfb: Feedback resistor /Constant 
+		** kRbu: Bias resistor(up) for voltage divider numerator /Constant 
+		** kRbd: Bias resistor(down) for voltage divider denominator /Constant 
+		** Ii: Current source input 
+		** Vo: Volatge output 
+		** Vcc: System power high
+		** Vss: System power low 	
+		******
+		C_fb Ii Vo {kCfb}
+		R_fb Ii Vo {kRfb}
+		R_bu Vdd nVbias {kRbu}
+		R_bd nVbias Vss {kRbd}
+		X_OPA355 Vo Vss nVbias Ii Vdd Vdd OPA355
+  .ends
 
 .end
