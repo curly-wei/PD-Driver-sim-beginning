@@ -1,7 +1,7 @@
 .title I/V Converter for PD-Driver
 
   .include lib/OPAx192/OPAx192.LIB
-  .subckt IVCvT_OPA192 Ii Vo Vdd Vss kCfb=2.7pF kRfb=1Meg kRbu=42k kRbd=3k
+  .subckt IVCvT_OPA192 Ii Vo Vdd Vss kCfb=2.7p kRfb=1Meg kRbu=215k kRbd=10k
 		******	
 		** Implement IV converter with OPA192
 		** kCpd: Equivelated capacitor of photodiode /Constant 
@@ -22,7 +22,7 @@
   .ends
 
 	.include lib/OPA810/opa810_a.lib
-  .subckt IVCvT_OPA810 Ii Vo Vdd Vss kCfb=2.7pF kRfb=1Meg kRbu=42k kRbd=3k
+  .subckt IVCvT_OPA810 Ii Vo Vdd Vss kCfb=2.7p kRfb=1Meg kRbu=215k kRbd=10k
 		******	
 		** Implement IV converter with OPA810
 		** kCpd: Equivelated capacitor of photodiode /Constant 
@@ -43,7 +43,7 @@
   .ends
 
 	.include lib/LMH6601/LMH6601.MOD
-  .subckt IVCvT_LMH6601 Ii Vo Vdd Vss kCfb=2.7pF kRfb=1Meg kRbu=42k kRbd=3k
+  .subckt IVCvT_LMH6601 Ii Vo Vdd Vss kCfb=2.7p kRfb=1Meg kRbu=215k kRbd=10k
 		******	
 		** Implement IV converter with LMH6601
 		** kCpd: Equivelated capacitor of photodiode /Constant 
@@ -64,7 +64,7 @@
   .ends
 	
 	.include lib/ada4817/ada4817.cir
-  .subckt IVCvT_ADA4817 Ii Vo Vdd Vss kCfb=27pF kRfb=1Meg kRbu=42k kRbd=3k
+  .subckt IVCvT_ADA4817 Ii Vo Vdd Vss kCfb=2.7p kRfb=1Meg kRbu=215k kRbd=10k
 		******	
 		** Implement IV converter with ADA4817
 		** kCpd: Equivelated capacitor of photodiode /Constant 
@@ -78,14 +78,14 @@
 		** Vss: System power low 	
 		****** 
 		C_fb Ii Vfb {kCfb}  
-		R_fb Ii Vfb {kRfb}
+		R_fb Ii Vfb {kRfb} 
 		R_bu Vdd nVbias {kRbu}
 		R_bd nVbias Vss {kRbd} 
 		X_ADA4817 nVbias Ii Vdd Vss Vo Vfb Vdd ADA4817
   .ends
  
 	.include lib/OPA355/OPA355.LIB
-  .subckt IVCvT_OPA355 Ii Vo Vdd Vss kCfb=2.7pF kRfb=1Meg kRbu=42k kRbd=3k
+  .subckt IVCvT_OPA355 Ii Vo Vdd Vss kCfb=2.7p kRfb=1Meg kRbu=215k kRbd=10k
 		******	
 		** Implement IV converter with LMH6601
 		** kCpd: Equivelated capacitor of photodiode /Constant 

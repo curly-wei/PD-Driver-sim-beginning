@@ -5,15 +5,15 @@
  
   VCC 4v5 GND DC 4.5v
 
-  X_IVCvT nPD_Io nIVCvt_Vo 4v5 GND IVCvT_ADA4817 kCfb=47fF kRfb=10Meg
-  X_PDMod nPD_Io GND PDMod
+  X_IVCvT nPD_Io nIVCvt_Vo 4v5 GND IVCvT_ADA4817 kCfb=0.1p kRfb=100Meg
+  X_PDMod nPD_Io GND PDMod 
    
  
   .control
     * set ctrl var
     set tran_data_out_filename="pd-tran-ada4817.ssv"
     * Transient Analyze
-    tran 1n 10u ;tran <step> <stop>
+    tran 5n 50u ;tran <step> <stop>
     * plot V(nIVCvt_Vo) 
     * Save data to ssv file
     wrdata $tran_data_out_filename V(nIVCvt_Vo) 
